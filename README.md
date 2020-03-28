@@ -8,7 +8,7 @@ Additionally, it performs spell correction on terms not present in inverted_inde
 
 The system also disregards words with idf (inverse document frequency) < **0.75** (this is equivalent to words present in more than roughly **17.78%** of documents), as they are considered common words, and have little impact on the overall query. This reduces total documents retrieved, which in turn improves the speed of the system.
 
-### Corpus used: AH/wiki_25
+### Corpus used: [wiki_25](https://drive.google.com/file/d/1-r5LtCQemtw1bGNqFq42gxuICz6FT8pz/view?usp=sharing)
 
 ## Installation and running
 
