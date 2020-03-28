@@ -3,7 +3,6 @@ import os
 """ Files """
 
 CORPUS_FILE = os.path.join(os.path.dirname(os.getcwd()), "wiki_25")
-CORPUS_FILES = [os.path.join(os.path.join(os.path.dirname(os.getcwd()), "AH"), "wiki_{:02}".format(i)) for i in range(100)]
 DATA_FILE = os.path.join(os.getcwd(), "data")
 DOCUMENTS_FILE = os.path.join(os.getcwd(), "documents")
 ENCODING = "utf-8"
@@ -33,17 +32,17 @@ MAX_DOCS_TO_RETRIEVE = 10
 """ Data structures """
 
 # corpus
+inverted_index = {
+	# word : {
+	# 	doc_id : frequency
+	# }
+}
 documents = [
 	# {
 	# 	"doc_id" : doc_id
 	# 	"title" : title
 	# }
 ]
-inverted_index = {
-	# word : {
-	# 	doc_id : frequency
-	# }
-}
 
 # query
 query = {

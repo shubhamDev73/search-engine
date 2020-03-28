@@ -14,8 +14,9 @@ The system also disregards words with idf (inverse document frequency) < **0.75*
 
 This program was written in `python 3.7` and it uses the nltk python library, which can be installed using `pip install nltk`.
 
-Program can be run by first running `python index_creation.py` for creating the inverted_index for the corpus (**Note**: Corpus used should be placed at **../wiki_25**, although this can be changed in `structure.py`)
-Then, use `python test_queries.py` for executing a query on this corpus (**Note**: this asks for user input)
+Program can be run by first running `python index_creation.py` for creating the inverted_index for the corpus. (**Note**: Corpus used should be placed at **../wiki_25**, although this can be changed in `structure.py`)
+
+Then, use `python test_queries.py` for executing a query on this corpus. (**Note**: this asks for user input)
 
 ### Some test queries
 

@@ -157,10 +157,7 @@ if __name__ == "__main__":
 	# Reading corpus
 
 	t = time.time()
-	size = 0
-	for c in CORPUS_FILES:
-		print(c[-2:])
-		size += read_corpus(c, ENCODING, TOKENIZER_REGEX, inverted_index, documents)
+	size = read_corpus(CORPUS_FILE, ENCODING, TOKENIZER_REGEX, inverted_index, documents)
 	print("Data took {:.2f} seconds to process".format(time.time() - t))
 	print("Corpus size: {:.2f}mb".format(size / (1024 * 1024)))
 
