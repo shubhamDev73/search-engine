@@ -1,0 +1,22 @@
+TO DO
+
+Tokenization
+Normalization
+Lemmatization?
+Stop words?
+Accents?
+
+Index construction for large files
+Support for arrays
+Twin buffer
+
+Storing compression
+Gap encoding (gamma?)
+Remove delimiters
+Different document file?
+
+Spell correction
+Non-binary distance?
+Keyboard distance?
+
+Update report
