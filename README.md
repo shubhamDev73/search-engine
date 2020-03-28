@@ -14,7 +14,7 @@ The system also disregards words with idf (inverse document frequency) < **0.75*
 
 This program was written in `python 3.7` and it uses the nltk python library, which can be installed using `pip install nltk`.
 
-Then, code can be run using `python index_creation.py` for creating the inverted_index for the corpus (**Note**: Corpus used should be placed at **../wiki_25**, although this can be changed in `structure.py`)
+Program can be run by first running `python index_creation.py` for creating the inverted_index for the corpus (**Note**: Corpus used should be placed at **../wiki_25**, although this can be changed in `structure.py`)
 Then, use `python test_queries.py` for executing a query on this corpus (**Note**: this asks for user input)
 
 ### Some test queries
@@ -32,9 +32,9 @@ Both the programs output the time taken to run the code and separately for I/O o
 
 ## Files
 
-- **\__init\__.py** : to mark the folder and python files present in it as modules.
-- **data (automatically created by `index_creation.py`)** : stores the inverted_index formed.
-- **documents (automatically created by `index_creation.py`)** : stores document details dictionary.
+- **\_\_init\_\_.py** : to mark the folder and python files present in it as modules.
+- **data** (automatically created by `index_creation.py`) : stores the inverted_index formed.
+- **documents** (automatically created by `index_creation.py`) : stores document details dictionary.
 - **index_creation.py** : read the corpus and creates inverted_index, stores it in data file and stores document details in documents file.
 - **structure.py** : contains values for file paths, tokenizer regex, delimiters used while storing files, number of documents to retrieve, and also descriptions of the data structures used.
 - **test_queries.py** : reads user input query, data and document files, and returns top K documents according to cosine similarity score computed.
@@ -44,13 +44,13 @@ Both the programs output the time taken to run the code and separately for I/O o
 - The tokenizer uses simple regex to tokenize, hence, it’s not very effective.
 - Almost all non-alphanumeric characters are ignored.
 - No lemmatization is done, which can improve scoring.
-- data and document files are stored in human readable format (utf-8), instead of actual values of numbers. This way, no compression can be applied on these files and hence their sizes are not optimized.
-- If any of the delimiters used in data and document files is present in any of the words in inverted_index, there might be some problems in reading those files.
-- Documents' id present in id attribute of doc tag is ignored in code (it is stored in documents file) and `doc_id` used in code starts with 0 and increments by 1 each time a new doc tag is read. This is done to reduce the size of inverted_index stored on the disk.
+- `data` and `document` files are stored in human readable format (utf-8), instead of actual values of numbers. This way, no compression can be applied on these files and hence their sizes are not optimized.
+- If any of the delimiters used in `data` and `document` files is present in any of the words in inverted_index, there might be some problems in reading those files.
+- Documents' id present in id attribute of **doc tag** is ignored in code (it is stored in `documents` file) and `doc_id` used in code starts with 0 and increments by 1 each time a new doc tag is read. This is done to reduce the size of inverted_index stored on the disk.
 
 ## TO DO
 
-- Correct information extraction from **<doc> tag**.
+- Correct information extraction from **doc tag**.
 - Improve tokenization to take into account floating numbers, dates, currency, accents, foreign language words, etc.
 - Lemmatization - it is the process of converting all words to their base form (like books and book should be considered same, etc.)
 - Twin buffer for index contruction as currently, for large files, it may lead to `MemoryError`.
