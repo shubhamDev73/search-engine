@@ -172,22 +172,25 @@ def retrieve_documents(documents_file, encoding, delimiters, documents):
 
 	""" Retreives documents present in documents list as generator """
 
-	file = open(documents_file, "r", encoding=encoding)
-	index = 0
-	for line in file:
-		if index in documents:
+	retreived = [{} for i in range(len(documents))]
 
+	file = open(documents_file, "r", encoding=encoding)
+	document_index = 0
+	for line in file:
+		try:
+			index = documents.index(document_index)
 			document = {}
 			for word in line[:-1].split(delimiters["term"])[:-1]:
 				info = word.split(delimiters["id"])
 				document[info[0]] = info[1]
-			yield document
-
-		index += 1
+			retreived[index] = document
+		except:
+			pass
+		document_index += 1
 
 	file.close()
 
-	return
+	return retreived
 
 """ main """
 
